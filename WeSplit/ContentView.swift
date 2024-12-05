@@ -47,8 +47,8 @@ struct ContentView: View {
                             value: $checkAmount,
                             format: .number
                         )
-                            .keyboardType(.decimalPad)
-                            .focused($amountIsFocused)
+                        .keyboardType(.decimalPad)
+                        .focused($amountIsFocused)
                     }
                     
                     Picker("Number of people", selection: $numberOfPeople) {
@@ -61,12 +61,12 @@ struct ContentView: View {
                 
                 Section("How much tip do you want to leave?") {
                     HStack {
-                        Text(" %  ")
+                        Text("%")
                         Divider()
                         TextField("Amount", value: $tipPercentage, format: .number)
                     }
-                        .keyboardType(.decimalPad)
-                        .focused($amountIsFocused)
+                    .keyboardType(.decimalPad)
+                    .focused($amountIsFocused)
                 }
                 
                 Section("Total amount for the check") {
@@ -75,9 +75,9 @@ struct ContentView: View {
                 .foregroundColor(.black)
                 
                 Section("Amount per person") {
-                        Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
                 }
-                .foregroundColor(.black)
+                .foregroundColor(.red)
                 
             }
             .navigationTitle("WeSplit")
@@ -85,8 +85,8 @@ struct ContentView: View {
             .onTapGesture {
                 self.amountIsFocused = false
             }
-
-            .foregroundColor(.indigo)
+            
+            .foregroundColor(.blue)
         }
     }
 }
